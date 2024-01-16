@@ -7,15 +7,38 @@ import React from 'react';
 import { ReactSVG } from 'react-svg';
 
 // 알림은 직접 생성할 수 있어야 함.
-const Alarms = {
-  startGoWork: '마루가 산책을 시작했어요.',
-  endGoWork: '마루가 산책을 마쳤어요.',
-  eatingTime: '마루 아침먹을 시간이에요.',
-  eatingTime2: '마루 점심먹을 시간이에요.',
-  eatingTime3: '마루 저녁먹을 시간이에요.',
-} as const;
+const messages = {
+  startGoWork: (name: string) => ({
+    icon: 'paw',
+    text: `${name}가 산책을 시작했어요.`,
+  }),
+  endGoWork: (name: string) => ({
+    icon: 'paw',
+    text: `${name}가 산책을 끝냈어요.`,
+  }),
+  eatingTime: (name: string) => ({
+    icon: 'bone',
+    text: `${name} 밥먹을 시간이에요.`,
+  }),
+  buyFood: (name: string) => ({
+    icon: 'sack-dollar',
+    text: `${name} 사료를 구매했어요.`,
+  }),
+  buySnack: (name: string) => ({
+    icon: 'sack-dollar',
+    text: `${name} 간식을 구매했어요.`,
+  }),
+  buyMedicine: (name: string) => ({
+    icon: 'sack-dollar',
+    text: `${name} 약을 구매했어요.`,
+  }),
+  buySupplies: (name: string) => ({
+    icon: 'sack-dollar',
+    text: `${name} 용품을 구매했어요.`,
+  }),
+};
 
-export default function Notifications() {
+export default function Alarms() {
   return (
     <>
       <DetailHeader
@@ -25,15 +48,18 @@ export default function Notifications() {
         알림
       </DetailHeader>
       <List>
-        {Object.values(Alarms).map((alarm, i) => (
-          <Message key={`alarm_${i}`}>
-            <div className="group">
-              <ReactSVG src="/assets/svg/paw.svg" />
-              {alarm}
-            </div>
-            <span className="time">6시간 전</span>
-          </Message>
-        ))}
+        {Object.values(messages).map((getMessageOf, i) => {
+          const { icon, text } = getMessageOf('마루');
+          return (
+            <Message key={`message_${i}`}>
+              <div className="message">
+                <ReactSVG src={`/assets/svg/${icon}.svg`} />
+                {text}
+              </div>
+              <span className="time">6시간 전</span>
+            </Message>
+          );
+        })}
       </List>
     </>
   );
@@ -57,7 +83,7 @@ const Message = styled.li`
     align-items: center;
     justify-content: space-between;
 
-    .group {
+    .message {
       display: flex;
       gap: 12px;
 

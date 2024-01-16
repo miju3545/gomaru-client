@@ -22,7 +22,9 @@ const theme: Theme = {
     },
     purple: {
       0: '#F8F2FF',
+      20: '#C599FF',
       30: '#A866FF',
+      45: '#7D1AFF',
       50: '#7000FF',
       55: '#6700EB',
       60: '#5C00D4',

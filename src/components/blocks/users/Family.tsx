@@ -5,17 +5,17 @@ import styled from '@emotion/styled';
 const butlers = [
   { id: 1, nickname: '아빠' },
   { id: 2, nickname: '엄마' },
-  { id: 3, nickname: '딸' },
-  { id: 4, nickname: '아들' },
-  { id: 5, nickname: '지인' },
+  { id: 3, nickname: '언니' },
+  { id: 4, nickname: '오빠' },
+  { id: 5, nickname: '오빠2' },
 ];
 
-export const Butlers = () => {
+export const Family = () => {
   return (
     <Wrap>
       <InnerHeader>
         <Paragraph size={18}>반려가족</Paragraph>
-        <Management>관라하기</Management>
+        <Management>관리하기</Management>
       </InnerHeader>
       <List>
         {butlers.map(({ id, nickname }) => (

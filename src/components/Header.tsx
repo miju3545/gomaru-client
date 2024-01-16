@@ -13,7 +13,7 @@ export const Header = ({ children }: PropsWithChildren) => {
       ) : (
         children
       )}
-      <Link href="/notifications">
+      <Link href="/alarms">
         <ReactSVG src="/assets/svg/notifications_unread.svg" />
       </Link>
     </Box>
@@ -32,5 +32,6 @@ const Box = styled.header`
     justify-content: space-between;
     padding: 12px 20px;
     height: 58px;
+    z-index: 1;
   `}
 `;

@@ -22,7 +22,7 @@ const menu = [
     link: '/household',
   },
   {
-    title: '맴버',
+    title: '멤버',
     img: 'users',
     link: '/members',
   },
@@ -51,10 +51,11 @@ export const FNB = () => {
 
 const Footer = styled.footer`
   ${({ theme }) => css`
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100vw;
+    height: 80px;
     display: grid;
     grid-template-columns: repeat(${menu.length}, 1fr);
     padding: 10px 24px 40px;
@@ -84,7 +85,7 @@ const MenuItem = styled(Link)<{ isActive: boolean }>`
     line-height: 14px;
     cursor: pointer;
     color: ${isActive ? theme.colors.n[90] : theme.colors.n[35]};
-
+    z-index: 1;
     svg {
       width: 22px;
       height: 22px;
