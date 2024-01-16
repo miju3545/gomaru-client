@@ -32,7 +32,7 @@ const theme: Theme = {
       70: '#B2003C',
       primary: '#E13A38',
       secondary: '#FFC3C3',
-      error: '#F1333A', // error
+      error: '#F1333A',
     },
     yellow: {
       10: '#FFF2CC',
