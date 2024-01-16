@@ -6,7 +6,7 @@ export const GoWorkRing = () => {
   return (
     <Wrap>
       <Paragraph size={16}>오늘의 산책</Paragraph>
-      <Box>dddd</Box>
+      <Box>산책 인증하기</Box>
     </Wrap>
   );
 };

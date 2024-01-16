@@ -6,11 +6,11 @@ import { ReactSVG } from 'react-svg';
 
 const menu = [
   { title: '홈', img: 'home', link: '/' },
-  {
-    title: '카테고리',
-    img: 'grid_view',
-    link: '/category',
-  },
+  // {
+  //   title: '카테고리',
+  //   img: 'grid_view',
+  //   link: '/category',
+  // },
   {
     title: '생활',
     img: 'paw',
@@ -22,9 +22,9 @@ const menu = [
     link: '/household',
   },
   {
-    title: '집사',
-    img: 'user',
-    link: '/user',
+    title: '맴버',
+    img: 'users',
+    link: '/members',
   },
 ];
 
@@ -62,8 +62,8 @@ const Footer = styled.footer`
     box-shadow: 0px 0px 12px 0px #00000014;
     border-radius: 24px 24px 0px 0px;
     background-color: ${theme.colors.white};
-    a:nth-of-type(3) svg,
-    a:nth-of-type(5) svg {
+    a:nth-of-type(2) svg,
+    a:nth-of-type(4) svg {
       width: 22px;
       height: 22px;
       padding: 2px;

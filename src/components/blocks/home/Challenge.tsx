@@ -6,7 +6,7 @@ export const Challenge = () => {
   return (
     <Wrap>
       <Paragraph size={16}>도전 중인 챌린지</Paragraph>
-      <Box>dddd</Box>
+      <Box>치카치카 양치하기</Box>
     </Wrap>
   );
 };

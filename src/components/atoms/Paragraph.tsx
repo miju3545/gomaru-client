@@ -7,8 +7,16 @@ type Props = {
   className?: string;
   style?: CSSProperties;
 };
-export const Paragraph = ({ size, children }: PropsWithChildren<Props>) => {
-  return <Box size={size}>{children}</Box>;
+export const Paragraph = ({
+  size,
+  children,
+  ...rest
+}: PropsWithChildren<Props>) => {
+  return (
+    <Box size={size} {...rest}>
+      {children}
+    </Box>
+  );
 };
 
 const Box = styled.div<{ size: number }>`

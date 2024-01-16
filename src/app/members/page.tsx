@@ -1,13 +1,21 @@
 'use client';
 
+import { FNB } from '@/components/FNB';
 import { Header } from '@/components/Header';
+import { Butlers } from '@/components/blocks/users/Butlers';
+import { MyPets } from '@/components/blocks/users/MyPets';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-export default function User() {
+export default function Members() {
   return (
     <Main>
-      <Header>집사 노트</Header>
+      <Header>가족 맴버</Header>
+      <Inner>
+        <Butlers />
+        <MyPets />
+      </Inner>
+      <FNB />
     </Main>
   );
 }
@@ -23,4 +31,8 @@ const Main = styled.main`
     bottom: 0;
     overflow-y: auto;
   `}
+`;
+
+const Inner = styled.div`
+  ${({ theme }) => css``}
 `;

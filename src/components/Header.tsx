@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { ReactSVG } from 'react-svg';
 import { Paragraph } from './atoms/Paragraph';
 import { PropsWithChildren } from 'react';
+import Link from 'next/link';
 
 export const Header = ({ children }: PropsWithChildren) => {
   return (
@@ -12,7 +13,9 @@ export const Header = ({ children }: PropsWithChildren) => {
       ) : (
         children
       )}
-      <ReactSVG src="/assets/svg/notifications_unread.svg" />
+      <Link href="/notifications">
+        <ReactSVG src="/assets/svg/notifications_unread.svg" />
+      </Link>
     </Box>
   );
 };
@@ -29,13 +32,5 @@ const Box = styled.header`
     justify-content: space-between;
     padding: 12px 20px;
     height: 58px;
-
-    a svg {
-      width: 22px;
-      height: 22px;
-      padding: 2px;
-      margin-left: 2px;
-      transform: translateY(1px);
-    }
   `}
 `;

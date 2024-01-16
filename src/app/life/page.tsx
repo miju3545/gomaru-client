@@ -1,5 +1,6 @@
 'use client';
 
+import { FNB } from '@/components/FNB';
 import { Header } from '@/components/Header';
 import { GoWorkRing } from '@/components/blocks/home/GoWorkRing';
 import { css } from '@emotion/react';
@@ -12,6 +13,7 @@ export default function Life() {
       <Inner>
         <GoWorkRing />
       </Inner>
+      <FNB />
     </Main>
   );
 }
