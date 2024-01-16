@@ -2,6 +2,7 @@ import { Paragraph } from '@/components/atoms/Paragraph';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const myPets = [
   {
@@ -34,7 +35,7 @@ export const MyPets = () => {
               </div>
             </MyPet>
           ))}
-          <NewPet onClick={() => {}}>
+          <NewPet href="/pets/new">
             <div className="circle">
               반려동물 <br /> 추가
             </div>
@@ -79,12 +80,13 @@ const List = styled.div`
   padding-left: 20px;
   width: fit-content;
 `;
-const MyPet = styled.li`
+const MyPet = styled.div`
   ${({ theme }) => css`
     border: 1px solid ${theme.colors.n[15]};
     border-radius: 16px;
     padding: 12px;
     width: calc(100vw - 120px);
+    height: 100%;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -108,7 +110,7 @@ const MyPet = styled.li`
     }
   `}
 `;
-const NewPet = styled.button`
+const NewPet = styled(Link)`
   ${({ theme }) => css`
     border-radius: 16px;
     width: calc(100vw - 120px);
@@ -116,11 +118,10 @@ const NewPet = styled.button`
     border: 1px dashed ${theme.colors.n[30]};
     background-color: ${theme.colors.white};
     color: ${theme.colors.n[50]};
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    /* flex-wrap: wrap; */
 
-    > .circle {
+    .circle {
       width: 48px;
       height: 48px;
       border: 1px dashed ${theme.colors.n[30]};
@@ -131,12 +132,14 @@ const NewPet = styled.button`
       align-items: center;
       font-size: 10px;
       font-weight: 600;
+      text-align: center;
     }
 
-    > p {
+    p {
       text-align: left;
-      max-width: 150px;
+      max-width: 160px;
       margin-left: 12px;
+      font-size: 13px;
     }
   `}
 `;
