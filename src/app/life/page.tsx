@@ -1,29 +1,16 @@
 'use client';
 
 import { Header } from '@/components/Header';
-import { Paragraph } from '@/components/atoms/Paragraph';
-import { Challenge } from '@/components/blocks/home/Challenge';
 import { GoWorkRing } from '@/components/blocks/home/GoWorkRing';
-import { Notification } from '@/components/blocks/home/Notification';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import Link from 'next/link';
-import { ReactSVG } from 'react-svg';
 
-export default function Home() {
+export default function Life() {
   return (
     <Main>
-      <Header>
-        <Link href="/">
-          <Paragraph size={18}>
-            고마루 <ReactSVG src="/assets/svg/dog.svg" />
-          </Paragraph>
-        </Link>
-      </Header>
+      <Header>[마루] 생활기록부</Header>
       <Inner>
-        <Notification />
         <GoWorkRing />
-        <Challenge />
       </Inner>
     </Main>
   );

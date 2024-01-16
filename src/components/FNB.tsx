@@ -7,9 +7,14 @@ import { ReactSVG } from 'react-svg';
 const menu = [
   { title: '홈', img: 'home', link: '/' },
   {
+    title: '카테고리',
+    img: 'grid_view',
+    link: '/category',
+  },
+  {
     title: '생활',
-    img: 'home',
-    link: '/settings',
+    img: 'paw',
+    link: '/life',
   },
   {
     title: '가계부',
@@ -17,9 +22,9 @@ const menu = [
     link: '/household',
   },
   {
-    title: '전체',
-    img: 'grid_view',
-    link: '/overview',
+    title: '집사',
+    img: 'user',
+    link: '/user',
   },
 ];
 
@@ -57,6 +62,12 @@ const Footer = styled.footer`
     box-shadow: 0px 0px 12px 0px #00000014;
     border-radius: 24px 24px 0px 0px;
     background-color: ${theme.colors.white};
+    a:nth-of-type(3) svg,
+    a:nth-of-type(5) svg {
+      width: 22px;
+      height: 22px;
+      padding: 2px;
+    }
   `}
 `;
 
@@ -68,15 +79,15 @@ const MenuItem = styled(Link)<{ isActive: boolean }>`
     align-items: center;
     gap: 4px;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 450;
-    line-height: 18px;
+    line-height: 14px;
     cursor: pointer;
     color: ${isActive ? theme.colors.n[90] : theme.colors.n[35]};
 
     svg {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       path {
         fill: ${isActive ? theme.colors.n[90] : theme.colors.n[35]};
       }
